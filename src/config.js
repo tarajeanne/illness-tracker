@@ -6,7 +6,7 @@ module.exports = {
   user: process.env.RDS_USERNAME,
   password: process.env.RDS_PASSWORD,
   db_port: process.env.RDS_PORT,
-  user: process.env.RDS_DB_NAME,
+  database: process.env.RDS_DB_NAME,
   JWT_SECRET: process.env.JWT_SECRET || 'auth-token',
   JWT_EXPIRY: process.env.JWT_EXPIRY || '1h'
 };
