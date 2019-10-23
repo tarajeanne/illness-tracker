@@ -2,12 +2,18 @@
 require("dotenv").config();
 
 const app = require('./app');
-const {PORT, DB_URL} = require('./config');
+const {PORT, user, host, database, password, db_port} = require('./config');
 const knex = require('knex');
 
 const db = knex({
   client: 'pg',
-  connection: DB_URL
+  connection: {
+    host,
+    port: db_port,
+    user,
+    password,
+    database
+  }
 })
 
 app.set('db', db);
