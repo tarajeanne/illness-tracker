@@ -1,5 +1,6 @@
 
 require("dotenv").config();
+const serverless = require('serverless-http');
 
 const app = require('./app');
 const {PORT, user, host, database, password, db_port} = require('./config');
@@ -18,7 +19,9 @@ const db = knex({
 
 app.set('db', db);
 
-app.listen(PORT,()=>{
-console.log(`Server is listening on port ${PORT}`);
-});
+// app.listen(PORT,()=>{
+// console.log(`Server is listening on port ${PORT}`);
+// });
+
+module.exports.handler = serverless(app);
 
