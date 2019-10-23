@@ -23,5 +23,5 @@ app.set('db', db);
 // console.log(`Server is listening on port ${PORT}`);
 // });
 
-module.exports = serverless(app);
+module.exports.handler = serverless(app);
 
