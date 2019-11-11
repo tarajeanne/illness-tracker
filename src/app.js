@@ -23,7 +23,7 @@ app.use('/api/food', FoodRouter)
 app.use('/api/event', EventRouter)
 app.use('/api/symptom', SymptomRouter);
 app.get('/',(req,res)=>{
-  res.status(200).send('Hello world');
+  res.status(200).send('Hello World');
 });
 
 
